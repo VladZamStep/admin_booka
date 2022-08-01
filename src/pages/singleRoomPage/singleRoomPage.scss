@@ -1,0 +1,61 @@
+@import "src/scss/abstracts/_variables";
+@import "src/scss/abstracts/_mixins";
+@import "src/scss/components/_buttons";
+
+.singleRoomPage {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .singleRoomPageContainer {
+        display: flex;
+        flex: 1;
+
+        @include for-tablet-landscape-up {
+            flex-direction: column;
+        }
+
+        .infoTitle {
+            @include infoTitle;
+
+            @include for-tablet-landscape-up {
+                text-align: center;
+            }
+        }
+
+        .singleRoomPageWrapper {
+            display: flex;
+            flex: 6;
+            flex-direction: column;
+            min-height: calc(100vh - 50px);
+            border-left: 1px solid $superLightGray;
+            padding: 1.1em;
+            gap: 1.1em;
+
+            @include for-tablet-landscape-up {
+                border: none;
+            }
+
+            .singleRoomItems {
+                @include standartShadowMixin;
+                padding: 1.1em;
+                position: relative;
+                border-radius: $smallBR;
+
+                .details {
+                    @include infoDetails;
+
+                    .itemTitle {
+                        @include for-tablet-landscape-up {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        .sendBtn {
+            @include blueBtn;
+        }
+    }
+}

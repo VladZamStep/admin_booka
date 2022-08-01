@@ -1,0 +1,129 @@
+@import "src/scss/abstracts/_variables";
+@import "src/scss/abstracts/_mixins";
+
+.sidebar {
+    top: 50px;
+    flex: 1;
+    height: calc(100vh - 50px);
+    min-width: 160px;
+    max-width: 220px;
+    background-color: $white;
+
+    @include for-tablet-landscape-up {
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 45px;
+        height: fit-content;
+        border: none;
+        border-bottom: 1px solid $superLightGray;
+    }
+
+    .center {
+
+        @include for-tablet-landscape-up {
+            display: flex;
+            align-items: center;
+        }
+
+        ul {
+            list-style: none;
+            font-size: .6rem;
+
+            @include for-tablet-landscape-up {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .title {
+                font-weight: bold;
+                padding-top: 1.75em;
+                margin-bottom: .85em;
+                color: $lightGray;
+                padding-left: 1em;
+
+                @include for-tablet-landscape-up {
+                    display: none;
+                }
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+                padding: .6em .6em .6em 1em;
+                cursor: pointer;
+
+                @include for-tablet-landscape-up {
+                    display: flex;
+                    padding: 1em;
+                }
+
+                &:hover {
+                    background-color: $superLightBlue;
+                }
+
+                .icon {
+                    font-size: 1rem;
+                    color: $lightBlue;
+                }
+
+                .unavailable {
+                    color: $superLightGray;
+                }
+
+                span {
+                    font-size: .7rem;
+                    font-weight: 600;
+                    color: $middleGray;
+                    margin-left: .8em;
+                }
+            }
+
+            .unavailable {
+                cursor: no-drop;
+            }
+        }
+    }
+
+    .bottom {
+        border-top: 1px solid $superLightGray;
+        font-size: .6rem;
+
+        @include for-tablet-landscape-up {
+            display: none;
+        }
+
+        .title {
+            font-weight: bold;
+            margin-top: 1.75em;
+            margin-bottom: .85em;
+            color: $lightGray;
+            padding-left: 1em;
+        }
+
+        .colorContainer {
+            display: flex;
+            align-items: center;
+            margin: 1em;
+
+            .colorOption {
+                width: 25px;
+                height: 25px;
+                border-radius: $smallBR;
+                border: 1px solid $middleBlue;
+                cursor: pointer;
+                margin-right: 5px;
+
+                &:first-child {
+                    background-color: $white;
+                }
+
+                &:last-child {
+                    background-color: $hardGray;
+                }
+            }
+        }
+    }
+}

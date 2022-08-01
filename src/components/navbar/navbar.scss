@@ -1,0 +1,77 @@
+@import "src/scss/abstracts/_variables";
+@import "src/scss/abstracts/_mixins";
+
+.navbar {
+    height: 50px;
+    border-bottom: 1px solid $superLightGray;
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+    color: $middleGray;
+
+    .mainLogo {
+        padding-left: 1.5em;
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: $lightBlue;
+
+            @include for-desktop-up {
+                font-size: 1rem;
+            }
+        }
+
+        @include for-phone-only {
+            padding-left: 1em;
+        }
+    }
+
+    .navbarContainer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .item {
+            display: flex;
+            align-items: center;
+            padding-right: 1.5em;
+
+            @include for-phone-only {
+                padding-right: 1em;
+            }
+
+            span {
+                display: flex;
+                align-items: center;
+            }
+
+            .icon {
+                font-size: 1.15rem;
+
+            }
+
+            &:first-child {
+                display: flex;
+                gap: .25em;
+                cursor: default;
+            }
+
+            &:nth-child(2) {
+                cursor: pointer;
+            }
+
+            &:last-child {
+                cursor: pointer;
+            }
+
+            .profilePhoto {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                border: 1px solid $white;
+            }
+        }
+    }
+}

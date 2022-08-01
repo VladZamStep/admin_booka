@@ -1,0 +1,221 @@
+@import "src/scss/abstracts/_variables";
+@import "src/scss/abstracts/_mixins";
+
+.app.dark {
+    background-color: $superHardGray;
+    color: $lightGray;
+
+
+    .welcome {
+        background: linear-gradient(150deg, $superHardGray, $superHardGray, $hardGray);
+        border-color: $hardGray;
+    }
+
+    .navbar {
+        color: $lightGray;
+        border-color: $hardGray;
+    }
+
+    .sidebar {
+        color: red;
+        background-color: $superHardGray;
+        border-color: $hardGray;
+
+        .top,
+        .bottom {
+            border-color: $hardGray;
+        }
+
+        .center {
+            .unavailable {
+                color: $middleHardGray;
+            }
+        }
+
+        ul {
+            li {
+                span {
+                    color: $lightGray;
+                }
+
+                &:hover {
+                    background-color: $hardGray;
+                }
+
+                .icon {
+                    color: $lightGray;
+                }
+            }
+        }
+    }
+
+    .css-rtrcn9-MuiTablePagination-root,
+    .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root,
+    .css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root {
+        color: $lightGray;
+    }
+
+    .css-zylse7-MuiButtonBase-root-MuiIconButton-root.Mui-disabled {
+        color: $middleGray;
+    }
+
+    .css-f3jnds-MuiDataGrid-columnHeaders,
+    .css-r11z79-MuiDataGrid-root .MuiDataGrid-cell,
+    .css-17jjc08-MuiDataGrid-footerContainer {
+        border-color: $middleGray;
+    }
+
+    .datatable {
+        border-color: $hardGray;
+
+        .dataGrid {
+            color: $lightGray;
+            border-color: $hardGray;
+
+            .viewBtn,
+            .deleteBtn {
+                color: $lightGray;
+                border-color: $lightGray;
+            }
+        }
+    }
+
+    .newHotelPageWrapper,
+    .newUserPageWrapper,
+    .newRoomPageWrapper {
+        border-color: $hardGray;
+
+        .top,
+        .bottom {
+            .addNew {
+                color: $lightGray;
+            }
+        }
+
+        .btns {
+            .sendBtn {
+                background-color: $middleBlue;
+                color: $superLightGray;
+
+                &:hover {
+                    background-color: $lightBlue;
+                    color: $black;
+                }
+            }
+        }
+    }
+
+    .editBtn {
+        background-color: $hardGray;
+        color: $middleGray;
+    }
+
+    .mainWrapper {
+        border-color: $hardGray;
+
+        .mainItems {
+
+            .editBtn {
+                background-color: $hardGray;
+                color: $middleGray;
+            }
+
+            .item {
+                .details {
+                    .itemTitle {
+                        color: $hardGray;
+                    }
+                }
+            }
+        }
+    }
+
+    .sendBtn {
+        background-color: $middleBlue;
+        color: $superLightGray;
+
+        &:hover {
+            background-color: $lightBlue;
+            color: $black;
+        }
+    }
+
+    .singleHotelPageWrapper {
+        border-color: $hardGray;
+
+        .singleHotelItems {
+
+            .editBtn {
+                background-color: $hardGray;
+                color: $middleGray;
+            }
+
+            .item {
+                .details {
+                    .itemTitle {
+                        color: $lightGray;
+                    }
+                }
+            }
+        }
+    }
+
+    .singleRoomPageWrapper {
+        border-color: $hardGray;
+
+        .singleRoomItems {
+
+            .editBtn {
+                background-color: $hardGray;
+                color: $middleGray;
+            }
+
+            .item {
+                .details {
+                    .itemTitle {
+                        color: $lightGray;
+                    }
+                }
+            }
+        }
+    }
+
+    .singleUserPageWrapper {
+        border-color: $hardGray;
+
+        .singleUserItems {
+            .editBtn {
+                background-color: $hardGray;
+                color: $middleGray;
+            }
+
+            .item {
+                .details {
+                    .itemTitle {
+                        color: $lightGray;
+                    }
+                }
+            }
+        }
+    }
+
+    .mainWrapper {
+        .mainItems {
+            .item {
+                .details {
+                    .itemTitle {
+                        color: $lightGray;
+                    }
+                }
+            }
+        }
+    }
+}
+
+input,
+select,
+textarea {
+    background-color: transparent;
+    color: $lightGray;
+    border-color: $lightGray;
+}

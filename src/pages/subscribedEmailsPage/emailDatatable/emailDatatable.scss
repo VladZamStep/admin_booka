@@ -1,0 +1,90 @@
+@import "src/scss/abstracts/_variables";
+@import "src/scss/abstracts/_mixins";
+
+.emailDatatable {
+    height: calc(100vh - 50px);
+    padding: 1.1em;
+
+    .dataGrid {
+        border-color: $lightGray;
+    }
+
+    .css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root {
+        color: $lightBlue;
+    }
+
+    .css-f3jnds-MuiDataGrid-columnHeaders,
+    .css-r11z79-MuiDataGrid-root .MuiDataGrid-cell,
+    .css-17jjc08-MuiDataGrid-footerContainer {
+        border-color: $lightGray;
+    }
+
+    .css-r11z79-MuiDataGrid-root {
+        @include for-phone-only {
+            font-size: .8rem;
+        }
+    }
+
+    .emailDatatableTitle {
+        width: 100%;
+        font-size: 1.3rem;
+        color: $middleGray;
+        margin-bottom: .8em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include for-phone-only {
+            font-size: 1rem;
+        }
+
+        .link {
+            color: $lightBlue;
+            font-size: 1rem;
+            font-weight: 400;
+            border: 1px solid $lightBlue;
+            padding: .25em .5em;
+            border-radius: $smallBR;
+            cursor: pointer;
+
+            @include for-phone-only {
+                font-size: .8rem;
+            }
+        }
+    }
+
+    .cellWithImg {
+        display: flex;
+        align-items: center;
+
+        .cellImg {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1em;
+        }
+    }
+
+    .cellAction {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+
+        .viewBtn {
+            padding: .15em .25em;
+            border-radius: $smallBR;
+            color: $hardBlue;
+            border: 1px dotted $hardBlue;
+            cursor: pointer;
+        }
+
+        .deleteBtn {
+            padding: .15em .25em;
+            border-radius: $smallBR;
+            color: $red;
+            border: 1px dotted $red;
+            cursor: pointer;
+        }
+    }
+}

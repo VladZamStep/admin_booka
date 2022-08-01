@@ -1,0 +1,117 @@
+@mixin flexCenterObject {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin standartShadowMixin {
+    -webkit-box-shadow: $webKitShadow;
+    box-shadow: $standartShadow;
+}
+
+@mixin darkShadowMixin {
+    -webkit-box-shadow: $webKitShadow;
+    box-shadow: $standartDarkShadow;
+}
+
+@mixin infoTitle {
+    font-size: 1.25rem;
+    color: $lightGray;
+    margin-bottom: .5em;
+}
+
+@mixin infoDetails {
+    .itemTitle {
+        font-size: 1.75rem;
+        margin-bottom: .5em;
+        color: $middleGray;
+    }
+
+    .delailItem {
+        font-size: .8em;
+        margin-bottom: .5em;
+
+        .itemKey {
+            font-weight: bold;
+            margin-right: .5em;
+        }
+
+        .itemValue {
+            font-weight: 300;
+        }
+
+        .roomNumberSpacing {
+            padding-right: 5px;
+        }
+    }
+}
+
+@mixin messageContainer {
+    .messageContainer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: .75rem;
+        font-weight: 100;
+        background-color: transparent;
+        color: $black;
+        backdrop-filter: blur(5px);
+        padding: 2.5em 2em;
+        border-radius: $smallBR;
+        z-index: 3;
+        text-align: center;
+        @include darkShadowMixin;
+        @include flexCenterObject;
+        flex-direction: column;
+        gap: .5em;
+        transition: 2s ease-in-out;
+
+        .messageWrapper {
+            @include flexCenterObject;
+            flex-direction: column;
+            gap: .5rem;
+
+            .messageTick {
+                font-size: 2.5rem;
+            }
+
+            .messageInfo {
+                font-size: .8rem;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+//Media querys
+
+@mixin for-phone-only {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-up {
+    @media (max-width: 900px) {
+        @content;
+    }
+}
+
+@mixin for-desktop-up {
+    @media (min-width: 1030px) {
+        @content;
+    }
+}
+
+@mixin for-big-desktop-up {
+    @media (max-width: 1800px) {
+        @content;
+    }
+}
+
+@mixin for-huge-desktop-up {
+    @media (min-width: 2250px) {
+        @content;
+    }
+}

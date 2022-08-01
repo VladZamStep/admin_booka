@@ -1,0 +1,17 @@
+@mixin blueBtn {
+    font-size: 1rem;
+    width: 100%;
+    padding: .8em;
+    border: none;
+    border-radius: $smallBR;
+    background-color: $lightBlue;
+    color: $white;
+    font-weight: 400;
+    letter-spacing: .1em;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+        background-color: $middleBlue;
+    }
+}

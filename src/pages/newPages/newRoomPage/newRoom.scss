@@ -1,0 +1,131 @@
+@import "src/scss/abstracts/_variables";
+@import "src/scss/abstracts/_mixins";
+@import "src/scss/components/_buttons";
+@import "src/scss/components/_inputs";
+
+.newRoomPage {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .newRoomPageContainer {
+        display: flex;
+        flex: 1;
+
+        @include for-tablet-landscape-up {
+            flex-direction: column;
+        }
+
+        .newRoomPageWrapper {
+            min-height: calc(100vh - 50px);
+            border-left: 1px solid $superLightGray;
+            padding: 1.1em 1.1em 2em 1.1em;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1em;
+            width: 100%;
+
+            @include for-tablet-landscape-up {
+                border: none;
+            }
+
+            .bottom {
+                position: relative;
+                @include messageContainer;
+            }
+
+            .top,
+            .bottom {
+                @include standartShadowMixin;
+                padding: 1.1em;
+                display: flex;
+                border-radius: $smallBR;
+
+                @include for-tablet-landscape-up {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .addNew {
+                    font-size: 1.1rem;
+                    color: $middleGray;
+                }
+
+                .bottomWrapper {
+                    padding-block: 1em;
+                    width: 100%;
+
+                    form {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 1em 3em;
+                        justify-content: center;
+
+                        @include for-phone-only {
+                            grid-template-columns: 1fr;
+                        }
+
+                        .formInput {
+                            width: 100%;
+
+                            label {
+                                .icon {
+                                    cursor: pointer;
+                                }
+                            }
+
+                            input {
+                                @include inputs;
+                            }
+                        }
+
+                        .selectOption {
+                            width: 100%;
+
+                            select {
+                                width: 100%;
+                                @include selects;
+                            }
+                        }
+
+                        .roomsArea {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+
+                            textarea {
+                                width: 100%;
+                                padding: .4em;
+                                outline: none;
+                                border: none;
+                                border-bottom: 1px solid $lightGray;
+                            }
+
+                            textarea {
+                                resize: none;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .btns {
+                display: flex;
+                gap: 1.1em;
+
+                @include for-phone-only {
+                    flex-direction: column;
+                }
+
+                .sendBtn {
+                    @include blueBtn;
+                }
+            }
+        }
+
+
+
+    }
+}

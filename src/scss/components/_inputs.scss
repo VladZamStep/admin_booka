@@ -1,0 +1,17 @@
+@mixin inputs {
+    width: 100%;
+    padding: .4em .4em .2em .4em;
+    border: none;
+    border-bottom: 1px solid $lightGray;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@mixin selects {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $lightGray;
+    padding: .4em 0 .2em .4em;
+}

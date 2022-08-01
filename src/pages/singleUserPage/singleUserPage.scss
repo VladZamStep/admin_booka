@@ -1,0 +1,104 @@
+@import "src/scss/abstracts/_variables";
+@import "src/scss/abstracts/_mixins";
+@import "src/scss/components/_buttons";
+
+.singleUserPage {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .singleUserPageContainer {
+        display: flex;
+        flex: 1;
+
+        @include for-tablet-landscape-up {
+            flex-direction: column;
+        }
+
+        .singleUserPageWrapper {
+            display: flex;
+            flex: 6;
+            flex-direction: column;
+            min-height: calc(100vh - 50px);
+            border-left: 1px solid $superLightGray;
+            padding: 1.1em;
+            gap: 1.1em;
+
+            @include for-tablet-landscape-up {
+                border: none;
+            }
+
+            .singleUserItems {
+                @include standartShadowMixin;
+                padding: 1.1em;
+                position: relative;
+                border-radius: $smallBR;
+
+                .editBtn {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    font-size: .9rem;
+                    font-weight: 300;
+                    padding: .4em .6em;
+                    outline: none;
+                    border: none;
+                    border-radius: 0 $smallBR 0 $smallBR;
+                    background-color: $lightBlue;
+                    color: $white;
+                    transition: $transition;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $middleBlue;
+                    }
+                }
+
+                .item {
+                    display: flex;
+                    gap: 1.5em;
+
+                    @include for-phone-only {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                    .photosInfo {
+                        @include flexCenterObject;
+                        flex-wrap: wrap;
+                        gap: .5em;
+                        margin-top: .5em;
+
+                        .itemImg {
+                            width: 200px;
+                            height: 200px;
+                            border-radius: $smallBR;
+                            object-fit: cover;
+
+                            @include for-phone-only {
+                                width: 280px;
+                                height: 280px;
+                            }
+                        }
+                    }
+
+                    .details {
+                        @include infoDetails;
+                    }
+                }
+            }
+        }
+
+        .infoTitle {
+            @include infoTitle;
+
+            @include for-tablet-landscape-up {
+                text-align: center;
+            }
+        }
+
+        .sendBtn {
+            @include blueBtn;
+        }
+    }
+}

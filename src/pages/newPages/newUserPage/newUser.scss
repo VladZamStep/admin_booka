@@ -1,0 +1,138 @@
+@import "src/scss/abstracts/_variables";
+@import "src/scss/abstracts/_mixins";
+@import "src/scss/components/_buttons";
+@import "src/scss/components/_inputs";
+
+.newUserPage {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .newUserPageContainer {
+        display: flex;
+        flex: 1;
+
+        @include for-tablet-landscape-up {
+            flex-direction: column;
+        }
+
+        .newUserPageWrapper {
+            flex: 6;
+            min-height: calc(100vh - 50px);
+            padding: 1.1em 1.1em 2em 1.1em;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1em;
+            border-left: 1px solid $superLightGray;
+
+            @include for-tablet-landscape-up {
+                border: none;
+            }
+
+            .bottom {
+                position: relative;
+                @include messageContainer;
+            }
+
+            .top,
+            .bottom {
+                display: flex;
+                @include standartShadowMixin;
+                padding: 1.1em;
+                border-radius: $smallBR;
+
+                @include for-phone-only {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .addNew {
+                    color: $middleGray;
+                    font-size: 1.1rem;
+                }
+
+                .left {
+                    flex: 1;
+                    @include flexCenterObject;
+                    flex-direction: column;
+                    max-width: 350px;
+                    gap: 1.1em;
+                    padding: 1.5em;
+
+                    img {
+                        width: 160px;
+                        height: 160px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        @include darkShadowMixin;
+                    }
+
+                    .formInput>label {
+                        @include flexCenterObject;
+                        gap: .5em;
+                        cursor: pointer;
+                        padding: .25em .5em;
+                        transition: $transition;
+
+                        &:hover {
+                            color: $lightBlue;
+                        }
+                    }
+                }
+
+                .right {
+                    flex: 2;
+                    padding: 1.5em;
+
+                    @include for-phone-only {
+                        padding: .5em;
+                    }
+
+                    form {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 1em 3em;
+                        justify-content: left;
+
+                        @include for-phone-only {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                        }
+
+                        .formInput {
+                            width: 100%;
+
+                            label {
+                                .icon {
+                                    cursor: pointer;
+                                }
+                            }
+
+                            input {
+                                @include inputs;
+                            }
+
+                            .formInputRooms {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .btns {
+                display: flex;
+                gap: 1.1em;
+
+                @include for-phone-only {
+                    flex-direction: column;
+                }
+
+                .sendBtn {
+                    @include blueBtn;
+                }
+            }
+        }
+    }
+}

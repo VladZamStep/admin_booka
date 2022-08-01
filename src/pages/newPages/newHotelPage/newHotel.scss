@@ -1,0 +1,232 @@
+@import "src/scss/abstracts/_variables";
+@import "src/scss/abstracts/_mixins";
+@import "src/scss/components/_buttons";
+@import "src/scss/components/_inputs";
+
+.newHotelPage {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .newHotelPageContainer {
+        display: flex;
+        flex: 1;
+
+        @include for-tablet-landscape-up {
+            flex-direction: column;
+        }
+
+        .newHotelPageWrapper {
+            flex: 6;
+            min-height: calc(100vh - 50px);
+            border-left: 1px solid $superLightGray;
+            padding: 1.1em 1.1em 2em 1.1em;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1em;
+
+            @include for-tablet-landscape-up {
+                border: none;
+            }
+
+            .bottom {
+                position: relative;
+                @include messageContainer;
+            }
+
+            .top,
+            .bottom {
+                display: flex;
+                @include standartShadowMixin;
+                padding: 1.1em;
+                border-radius: $smallBR;
+
+                @include for-tablet-landscape-up {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .addNew {
+                    color: $middleGray;
+                    font-size: 1.1rem;
+                }
+
+                .left {
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    padding: 1em;
+                    gap: 1.1em;
+
+                    @include for-desktop-up {
+                        padding: 1.5em;
+                    }
+
+                    .leftGrid {
+                        display: grid;
+                        justify-content: center;
+                        align-items: center;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 1.1em;
+                        width: 320px;
+
+                        @include for-tablet-landscape-up {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                        }
+
+                        @include for-phone-only {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                        }
+
+                        .uploadImages {
+                            @include flexCenterObject;
+                        }
+
+                        img {
+                            width: 160px;
+                            height: 160px;
+                            border-radius: $smallBR;
+                            object-fit: cover;
+                            @include darkShadowMixin;
+
+                            @include for-phone-only {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+
+                    .leftFlex {
+                        @include flexCenterObject;
+                        width: 320px;
+
+                        img {
+                            width: 160px;
+                            height: 160px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            @include darkShadowMixin;
+                        }
+                    }
+
+                    .formInput {
+                        label {
+                            @include flexCenterObject;
+                            gap: .5em;
+                            cursor: pointer;
+                            padding: .25em .5em;
+                            transition: $transition;
+
+                            &:hover {
+                                color: $lightBlue;
+                            }
+                        }
+                    }
+                }
+
+                .right {
+                    flex: 2;
+                    padding: 1.1em;
+
+                    @include for-desktop-up {
+                        padding: 1.5em;
+                    }
+
+                    @include for-phone-only {
+                        padding: .5em;
+                    }
+
+                    form {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 1em 1.5em;
+                        justify-content: left;
+
+                        @include for-desktop-up {
+                            gap: 1em 3em;
+                        }
+
+                        @include for-phone-only {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                        }
+
+                        .formInput {
+                            width: 100%;
+
+                            label {
+                                .icon {
+                                    cursor: pointer;
+                                }
+                            }
+
+                            input {
+                                @include inputs;
+                            }
+
+                            .formInputRooms {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    .selectedOptionWrapper {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 1em;
+                        width: 100%;
+                    }
+
+                    .selectOption {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+
+                        select {
+                            @include selects;
+                        }
+                    }
+
+                    .selectRooms,
+                    .descriptionArea {
+                        width: 100%;
+
+                        select,
+                        textarea {
+                            height: 120px;
+                            width: 100%;
+                            padding: .4em;
+                            margin-top: .4em;
+                            outline: none;
+                            border: none;
+                            border-top: 1px solid $lightGray;
+                            border-bottom: 1px solid $lightGray;
+                        }
+
+                        textarea {
+                            resize: none;
+                        }
+                    }
+                }
+            }
+
+            .btns {
+                display: flex;
+                gap: 1.1em;
+
+                @include for-phone-only {
+                    flex-direction: column;
+                }
+
+                .sendBtn {
+                    @include blueBtn;
+                }
+            }
+        }
+    }
+}

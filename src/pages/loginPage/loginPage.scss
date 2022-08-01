@@ -1,0 +1,61 @@
+@import "src/scss/abstracts/_variables";
+@import "src/scss/abstracts/_mixins";
+
+.loginPage {
+    height: 100vh;
+    @include flexCenterObject;
+    background: linear-gradient(150deg, $white, $superLightBlue, $lightBlue);
+
+    .loginContainer {
+        display: flex;
+        flex-direction: column;
+        gap: .25em;
+
+        h1 {
+            font-size: 1.75rem;
+            text-align: center;
+            color: $middleGray;
+        }
+
+        input {
+            height: 40px;
+            outline: none;
+            padding-inline: 1em;
+            border: 1px solid $lightBlue;
+            border-radius: $smallBR;
+            color: $hardGray;
+        }
+
+        input:hover,
+        input:focus {
+            border: 1px solid $middleBlue;
+        }
+
+        .submitBtn {
+            height: 40px;
+            font-size: .9rem;
+            background-color: $lightBlue;
+            color: $white;
+            border: none;
+            border-radius: $smallBR;
+            font-weight: 500;
+            padding-inline: 1.1em;
+            cursor: pointer;
+            transition: $transition;
+        }
+
+        .submitBtn:hover {
+            background-color: $middleBlue;
+            @include standartShadowMixin;
+        }
+
+        span {
+            position: absolute;
+            bottom: 50vh;
+            left: 50vw;
+            transform: translate(-50%, 120px);
+        }
+    }
+
+
+}

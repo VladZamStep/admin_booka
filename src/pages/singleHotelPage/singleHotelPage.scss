@@ -1,0 +1,109 @@
+@import "src/scss/abstracts/_variables";
+@import "src/scss/abstracts/_mixins";
+@import "src/scss/components/_buttons";
+
+.singleHotelPage {
+    min-height: 100vh;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .singleHotelPageContainer {
+        display: flex;
+        flex: 1;
+
+        @include for-tablet-landscape-up {
+            flex-direction: column;
+        }
+
+        .singleHotelPageWrapper {
+            display: flex;
+            flex: 6;
+            flex-direction: column;
+            min-height: calc(100vh - 50px);
+            border-left: 1px solid $superLightGray;
+            padding: 1.1em;
+            gap: 1.1em;
+
+            @include for-tablet-landscape-up {
+                border: none;
+            }
+
+            .singleHotelItems {
+                padding: 1.1em;
+                @include standartShadowMixin;
+                position: relative;
+                border-radius: $smallBR;
+
+                .item {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    align-items: flex-start;
+                    gap: 1.1em;
+
+                    @include for-huge-desktop-up {
+                        grid-template-columns: 2fr 3fr;
+
+                    }
+
+                    @include for-tablet-landscape-up {
+                        grid-template-columns: 1fr;
+
+                    }
+
+
+                    .photosInfo {
+                        @include flexCenterObject;
+                        flex-wrap: wrap;
+                        gap: .5em;
+                        margin-top: .5em;
+
+                        .itemImg {
+                            width: 200px;
+                            height: 200px;
+                            border-radius: $smallBR;
+                            object-fit: cover;
+
+                            @include for-huge-desktop-up {
+                                width: 250px;
+                                height: 250px;
+                            }
+
+                            @include for-tablet-landscape-up {
+                                width: 200px;
+                                height: 200px;
+                            }
+
+                            @include for-phone-only {
+                                width: 250px;
+                                height: 250px;
+                            }
+                        }
+                    }
+
+                    .details {
+                        @include infoDetails;
+
+                        .itemTitle {
+                            @include for-tablet-landscape-up {
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .infoTitle {
+            @include infoTitle;
+
+            @include for-tablet-landscape-up {
+                text-align: center;
+            }
+        }
+
+        .sendBtn {
+            @include blueBtn;
+        }
+    }
+}

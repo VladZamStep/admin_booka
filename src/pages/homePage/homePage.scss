@@ -1,0 +1,63 @@
+@import "src/scss/abstracts/_variables";
+@import "src/scss/abstracts/_mixins";
+
+.homePage {
+    display: flex;
+    flex-direction: column;
+
+    .homeContainer {
+        display: flex;
+        flex: 1;
+
+        @include for-tablet-landscape-up {
+            flex-direction: column;
+        }
+
+        .welcome {
+            flex: 6;
+            min-height: calc(100vh - 50px);
+            margin: 0 auto;
+            padding-inline: 1.5em;
+            @include flexCenterObject;
+            flex-direction: column;
+            background: linear-gradient(150deg, $white, $white, $lightGray);
+            text-align: center;
+            border-left: 1px solid $superLightGray;
+
+            @include for-tablet-landscape-up {
+                width: 100%;
+                min-height: calc(100vh - 95px);
+                border: none;
+            }
+
+            @include for-phone-only {
+                min-height: calc(100vh - 130.19px);
+            }
+
+            .welcomeTitle {
+                margin-bottom: .5em;
+
+                @include for-tablet-landscape-up {
+                    font-size: 1.75rem;
+                }
+
+                @include for-desktop-up {
+                    font-size: 1.5rem;
+                }
+
+                @include for-phone-only {
+                    font-size: 1.25rem;
+                }
+            }
+
+            .welcomeInfo {
+                line-height: 2em;
+
+                @include for-phone-only {
+                    line-height: 1.5em;
+                    font-size: .9rem;
+                }
+            }
+        }
+    }
+}

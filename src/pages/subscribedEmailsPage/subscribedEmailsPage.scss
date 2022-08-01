@@ -1,0 +1,28 @@
+@import "src/scss/abstracts/_variables";
+@import "src/scss/abstracts/_mixins";
+
+.listPage {
+    display: flex;
+    flex-direction: column;
+
+
+    .listPageContainer {
+        display: flex;
+        flex: 1;
+
+
+        @include for-tablet-landscape-up {
+            flex-direction: column;
+        }
+
+        .dataWrapper {
+            border-left: 1px solid $superLightGray;
+            flex: 6;
+            min-height: calc(100vh - 50px);
+
+            @include for-tablet-landscape-up {
+                border: none;
+            }
+        }
+    }
+}

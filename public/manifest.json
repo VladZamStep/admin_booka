@@ -1,0 +1,20 @@
+{
+  "short_name": "AdminBooka",
+  "name": "Admin Page Booka.com",
+  "icons": [
+    {
+      "src": "/faviconIcons/icons8-database-options-material-rounded-32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "density": "1.5"
+    },
+    {
+      "src": "/faviconIcons/icons8-database-options-material-rounded-76.png",
+      "sizes": "76x76",
+      "type": "image/png",
+      "density": "2.0"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone"
+}

@@ -1,0 +1,33 @@
+/* Colors */
+
+$white: rgb(255, 255, 255);
+$superLightBlue: rgb(232, 242, 255);
+$lightBlue: rgb(61, 145, 255);
+$lightMiddleBlue: rgb(0, 110, 255);
+$middleBlue: hsl(214, 100%, 32%);
+$hardBlue: rgb(0, 0, 139);
+$red: rgb(220, 20, 60);
+$lightGray: rgb(153, 153, 153);
+$lightMiddleGray: rgb(100, 100, 100);
+$middleGray: rgb(84, 84, 84);
+$middleHardGray: rgb(60, 60, 60);
+$hardGray: rgb(51, 51, 51);
+$black: rgb(0, 0, 0);
+$superHardGray: rgb(22, 22, 22);
+$superLightGray: rgb(217, 217, 217);
+$blackTransparent: rgba(0, 0, 0, 0.4);
+$lightBlackTransparent: rgba(0, 0, 0, 0.2);
+$lightWhiteTransparent: rgba(255, 255, 255, 0.1);
+
+/* Box-shadow */
+
+$webKitShadow: 0px 0px 10px 1px rgba(0, 0, 0, .4);
+$standartShadow: 0px 0px 10px 1px rgb(201 201 201 / 40%);
+$standartDarkShadow: 0px 0px 15px -2px rgba(0, 0, 0, 0.4);
+$thinShadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.3);
+
+/* Border-radius */
+$smallBR: .4em;
+
+/* Transitions */
+$transition: .2s ease-in-out;
